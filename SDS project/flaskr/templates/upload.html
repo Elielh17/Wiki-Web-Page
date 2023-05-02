@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+  {% block content %}
+
+<style>
+   body {
+        /* background: linear-gradient(to bottom, #2980b9, #6dd5fa, #ffffff); */
+        background-color: rgb(166, 230, 242);  
+        background-size: cover;
+        background-repeat: no-repeat;
+        align-content: center; 
+        
+    }
+    .new-main {
+        position: fixed;
+        width: auto;
+        margin: auto;
+        padding: 20px;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;   
+        background-color: rgb(215, 237, 244);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+           
+    }
+    .main {
+        width: 30%;
+        margin: 47%;
+        }
+</style>
+
+<br>
+<title>Upload new File</title>
+<div class = "main">
+    <div class = "new-main">
+    <h1>Upload new File</h1>
+    {% if message %}
+       <p> {{ message }}</p>
+    {% endif %}
+    
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+</div>
+</div>
+  {% endblock content %}
+
+

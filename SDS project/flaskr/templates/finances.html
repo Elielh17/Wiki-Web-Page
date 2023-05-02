@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+  {% block content %}
+<br>
+    <title>Finance Questions</title>
+    <h1>Finance Questions</h1>
+    
+    <form method=post enctype=multipart/form-data>
+        <label for="page_name">Travel Site:</label>
+        <input type="text" id="page_name" name="page_name" required><br><br>
+        <label for="answers">Cost of Site Visitaion:</label>
+        <input type="text" id="answers" name="answers" required><br><br>
+        <label for="answers">Housing:</label>
+        <input type="text" id="answers" name="answers" required><br><br>
+        <input type="submit" value="Submit".>
+    </form>
+  {% endblock content %}

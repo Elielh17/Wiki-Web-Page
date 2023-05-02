@@ -1,0 +1,146 @@
+{% extends "main.html" %}
+
+{% block content %}
+<head>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 45vh; /* set the height to 50% of the viewport height */
+            width: auto;
+        }
+
+        .person {
+            display: flex;
+            align-items: center;
+            width: 80%; /* set the width to 80% of the container */
+            height: 70%; /* set the height to 80% of the container */
+            max-width: 600px; /* set a maximum width for larger screens */
+            max-height: 600px; /* set a maximum height for larger screens */
+            margin: 20px;
+            border-radius: 5px;
+            padding: 2%;
+        }
+
+        .person img {
+            width: 25%; /* set the width to 25% of the container */
+            height: auto; /* let the height scale proportionally */
+            max-width: 150px; /* set a maximum width for larger screens */
+            max-height: 150px; /* set a maximum height for larger screens */
+            margin-right: 3%;
+        }
+
+        .person p {
+            font-size: 1em; /* set the font size relative to the container */
+            line-height: 1.5;
+        }
+        /* .map-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            height: 60%;
+            margin: auto; /* center the container horizontally */
+            margin-left: auto; /* push the container to the right */
+            background-size: cover;
+            background-position: center; */
+        .review-container {
+            display: flex;
+            align-items: left;
+            justify-content: center;
+            width: 50%;
+            height: 60%;
+            margin: auto; /* center the container horizontally */
+            margin-left: auto; /* push the container to the right */
+            background-size:50px;
+            background-position: center;
+            }
+
+        .review-info {
+            margin-left: 10%; /* add a 20px gap between the two divs */
+            margin-right: 55%;
+            border: 1px solid rgb(240, 232, 232);
+            background-color: rgb(103, 252, 237);
+            color: rgb(61, 85, 85);
+            height: fit-content;
+            width: fit-content;
+            border-radius: 10px;
+            padding: 1%;
+            }  
+
+        .specific-review{
+            margin-left: 10%; /* add a 20px gap between the two divs */
+        }   
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center; color: blue;">{{ page_name }}</h1>
+    <div class="container">
+        <img src="{{ image_url }}" alt="My Image" width="550" height="345", style="border-radius:10px;"> 
+        <div class="person">
+            <p><strong>Description</strong><br>{{ page_content }} </p>
+        </div>
+    </div>
+    
+
+    <div>
+
+        <style>
+        #element {
+            width:20%;
+            height:20px;
+            background-color:#FFFFFF;
+            border:2px solid;
+            border-style: solid;
+            border-color: black;
+            margin-left: 10%;          
+          }
+        </style>
+        <!-- Change this if statement -->
+        {% if Variable_to_store_the_financial_experience != None %}
+            <h1 id="element" style="font-size: large;"><span style="font-size: large;"> Average Expenses: </span><span style="color: #39FF33; font-size: large; line-height: 0px;"> {{Variable_to_store_the_financial_experience}} </span> </h1>
+        {% endif %}
+        {% if page_link != '' %}
+            <!-- <iframe src={{page_link}} id="frame" width="550" height="345" style="border:0; float: right;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+            <iframe src={{page_link}} id="frame" width="550" height="345" style="border: 1px solid #ccc; margin: 0 225px 0 auto; float: right; border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        {% endif %}  
+    </div>
+    <!-- we will get the content from the pages para route. -->
+
+    <div class="review-container">
+        <div class="review-info">
+            <h2>Current Reviews:</h2>
+            <div class="specific-review">
+                {% for review in reviews %}
+                    <div class="review">
+                        <p>{{ review }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <br>
+            <form method="post">
+                <div>
+                    <label for="review"><h4>Write a Review:</h4></label>
+                    <textarea id="review" name="review">{{ review_text }}</textarea>
+                </div>
+                {% with reviews = get_flashed_messages() %}
+                {% if reviews %}
+                    <ul class="flashes">
+                        {{reviews[0]}}
+                    </ul>
+                {% endif %}
+                {% endwith %}           
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock content %} 

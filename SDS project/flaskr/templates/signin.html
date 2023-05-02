@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+{% block content %}
+<br>
+<head>
+    <title>Team Brainiacs</title>
+    <style>
+        .new-main {
+            width: 30%;
+            margin: auto;
+            padding: 20px;
+            margin-top: 10%;
+            background-color: rgb(215, 237, 244);
+            border-radius: 10px;
+            align-content: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+
+        body {
+        background-color: rgb(166, 230, 242);
+        background-size: cover;
+        background-repeat: no-repeat;
+        align-content: center; 
+        }
+        
+        main {
+            width: 40%;
+            margin: 30%;
+            margin-top: 5%;
+            align-content: center;            
+            }
+                     
+    </style>
+</head>
+    <main>
+        <div class = "new-main">
+            <h1 style="font-size: 6; color: rgb(0, 4, 255);width: 60%; margin: auto;">Sign In</h1> 
+        <form method="post" id="login-form" style="width: 70%; margin: auto;">
+            <input type="text" id="Username" name="username" placeholder="Username" required>
+            <br>
+            <input type="password" id="Password" name="password" placeholder="Password" required>
+            <br>
+            {% if message %}
+               <div>{{ message }}</div>
+            {% endif %}             
+            <input type="submit" value="Login" id="login-form-submit">
+        </form>
+        </div>     
+    </main>
+{% endblock content %}
+

@@ -1,0 +1,4 @@
+TODO(Checkpoint Requirement 1 of 3): Add team member names and emails.
+Cameron Briggs <cameron_briggs@techexhange.in>
+Sajan Acharya <sajan_acharya@techexchange.in>
+Eliel Hernandez <elielhernandez@techexchange.in>

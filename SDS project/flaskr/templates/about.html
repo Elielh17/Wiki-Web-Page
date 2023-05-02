@@ -1,0 +1,61 @@
+{% extends "main.html" %}
+{% block content %}
+<head>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: rgb(166, 230, 242);
+        }
+        .container {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100vh;
+            }
+
+        .person {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin: 10%;
+            border: 1px solid #ccc;
+            background-color: rgb(215, 237, 244);   
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+        .person img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+            }
+        .person p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h1 style= "position:absolute ;top: 10%; left: 45%; color: blue;">Team Brainiacs</h1>
+<div class="container">
+    <div class="person">
+        <img src="https://cdn.discordapp.com/attachments/1076232707652206772/1081955756577927209/img1.jpg" alt="Sajan Acharya">
+        <p><strong>Sajan Acharya</strong><br>Hello, my name is Sajan Acharya and I am currently a sophomore majoring in computer science at Howard University. I have had a passion for computer science since high school and have been fortunate enough to continue pursuing it in college. Currently, I am serving as an undergraduate research assistant in an AI ML research project and will also be interning with Salesforce's network team this summer. Outside of my studies and work, I enjoy travelling to new places, playing soccer, and watching anime. In fact, all of the destinations on this website are on my travel wishlist!</p>
+    </div>
+    <div class="person">
+        <img src="https://cdn.discordapp.com/attachments/1079200030440833175/1083448363917266974/584A0C35-F8E5-4AC0-AE34-C6C932ED064F.jpg" alt="Eliel Hernandez">
+        <p><strong>Eliel Hernandez</strong><br>My name is Eliel Hernandez, I'm a Software Engineering Student in the University of Puerto Rico, Mayaguez. This summer I have an internship with the company Frontier Technology INC. I will be working as an Associate Process Analyst. I’m interested in Game development, gaming, Marvel, Star Wars, Soccer, and more.  Fun fact, I created a 2D game with the Unity game engine.</p>
+    </div>
+    <div class="person">
+        <img src="https://storage.cloud.google.com/wiki_content_bucket/cameron_pic.jpeg" alt="Cameron Briggs">
+        <p><strong>Cameron Briggs</strong><br>My name is Cameron Briggs, and I am a sophomore computer science at Howard University located in Washington D.C. I am currently pursuing a role in software engineering, and then maybe product management after that. I am interested in gaming, traveling, and sports.</p>
+    </div>
+</div>
+
+</body>
+
+{% endblock %}
